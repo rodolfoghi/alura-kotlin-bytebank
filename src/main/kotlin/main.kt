@@ -9,6 +9,10 @@ fun main() {
     println("número da conta: $numeroConta")
     println("saldo: $saldo")
 
+//    testaCondicoes(saldo)
+}
+
+fun testaCondicoes(saldo: Double) {
     when {
         saldo > 0.0 -> println("conta é positiva")
         saldo == 0.0 -> println("conta é neutra")
