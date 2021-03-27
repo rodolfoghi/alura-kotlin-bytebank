@@ -6,25 +6,35 @@ fun main() {
     contaFulano.titular = "Fulano"
     contaFulano.numero = 1000
     contaFulano.saldo = 100.0
-    println(contaFulano.titular)
-    println(contaFulano.numero)
-    println(contaFulano.saldo)
+    println(contaFulano.imprimeSaldo())
 
-    println()
+    contaFulano.saca(10.0)
 
-    val contaCiclano = Conta()
-    contaCiclano.titular = "Ciclano"
-    contaCiclano.numero = 1001
-    contaCiclano.saldo = 200.0
-    println(contaCiclano.titular)
-    println(contaCiclano.numero)
-    println(contaCiclano.saldo)
+    println(contaFulano.imprimeSaldo())
+
+    contaFulano.deposita(2000.0)
+
+    println(contaFulano.imprimeSaldo())
 }
 
 class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
+
+    fun deposita(valor: Double) {
+        saldo += valor
+        println("Depositou $valor na conta de $titular")
+    }
+
+    fun saca(valor: Double) {
+        saldo -= valor
+        println("Sacou $valor da conta de $titular")
+    }
+
+    fun imprimeSaldo(): String {
+        return "O saldo de $titular é $saldo"
+    }
 }
 
 //fun testaEstruturasRepeticao() {
